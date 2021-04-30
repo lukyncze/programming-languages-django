@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail jazyku{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+    <h2>Detail jazyku</h2>
+    <h3>{{ jazyky.nazev }}</h3>
+    {% if jazyky.foto %}
+    <p><img src="{{ jazyky.foto.url }}" alt="{{ jazyky.nazev }}"></p>
+    {% endif %}
+    <p>Oblíbenost: {% for star in "x"|ljust:jazyky.oblibenost %}<i class="fa fa-star"></i>{% endfor %}</p>
+    <p>Zařazení: {{ jazyky.typ.oznaceni_typu }} {% if jazyky.typ.druh %}({{ jazyky.typ.druh }}){% endif %}</p>
+    <p>{{ jazyky.popis|upper }}</p>
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'jazyky-update' jazyky.pk %}" class="btn btn-primary">Upravit</a><a href="{% url 'jazyky-delete' jazyky.pk %}" class="btn btn-danger">Smazat</a></p>
+    {% endif %}
+{% endblock %}

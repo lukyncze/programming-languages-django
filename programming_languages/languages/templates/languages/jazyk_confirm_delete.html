@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Chcete opravdu odstranit tento jazyk?</h2>
+
+<p>Jste si opravdu jistí: {{ jazyky }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Ano, smazat.">
+</form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Přehled jazyků{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+    <h2>Přehled jazyků</h2>
+    {% for jazyky in jazyky_list %}
+        <h3><a href="{% url 'detail' jazyky.pk %}">{{ jazyky.nazev }}</a></h3>
+        <p>Oblíbenost: {% for star in "x"|ljust:jazyky.oblibenost %}<i class="fa fa-star"></i>{% endfor %}</p>
+        <p>Zařazení: {{ jazyky.typ.oznaceni_typu }} {% if jazyky.typ.druh %}({{ jazyky.typ.druh }}){% endif %}</p>
+        <hr>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'jazyky-create' %}" class="btn btn-success">Nový produkt</a></p>
+    {% endif %}
+{% endblock %}
