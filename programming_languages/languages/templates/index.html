@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Úvodní stránka{% endblock %}
 
 {% block content %}
-    <h2 class="text-center">Úvodní stránka</h2>
-    <p class="text-center"><a href="list">Seznam jazyků</a></p>
+<div class="text-center">
+    <h2>Úvodní stránka</h2>
+    <h5>↓ Klikni na obrázek aby ses dostal dál ↓</h5>
+    <a href="{% url 'list' %}">
+        <div class="img-hover-zoom">
+            <img id="uvod" src="{% static 'img/programming-languages.png' %}" alt="Seznam programovacích jazyků" class="img-fluid">
+        </div>
+    </a>
+</div>
 {% endblock %}

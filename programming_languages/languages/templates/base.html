@@ -5,21 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/7ffc9ccdb4.js" crossorigin="anonymous"></script>
     {% load static %}
     {% block css %}
     {% endblock %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header class="jumbotron-fluid bg-danger p-3">
-        <h1 class="text-center text-warning display-3">Programovací jazyky</h1>
+    <header class="jumbotron-fluid bg-danger p-5">
+        <h1 class="text-center"><a href="{% url 'index' %}">Programovací jazyky</a></h1>
     </header>
-    <main class="container">
+    <main>
     {% block content %}{% endblock %}
     </main>
-    <footer class="container-fluid bg-dark text-secondary">
-        <p class="text-center">&copy; 2021 - SŠPU Opava - IT4</p>
-    </footer>
+
+    <footer class="container-fluid">
+    <div class="author">Vytvořil s <i class="fas fa-heart"></i> <b>Lukáš Sukeník</b></div>
+    <div class="social-media">
+      <a href="https://github.com/lukyncze"><i class="fa fa-github"></i></a>
+      <a href="http://lukyn.eu"><i class="fas fa-laptop-code"></i></a>
+      <a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-suken%C3%ADk-76ba291a4/"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </footer>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
