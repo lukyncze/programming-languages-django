@@ -9,8 +9,8 @@ You can visit site [here](https://lukyncze-programming-languages-django.netlify.
 ```sh
 git clone https://github.com/lukyncze/programming-languages-django
 cd programming-languages-django
-virtualenv -p python3 ../.venv
-. ../.venv/bin/activate
+virtualenv -p python3 .venv
+. .venv/bin/activate
 pip install -r requirements.txt
 cd programming_languages
 python manage.py runserver
