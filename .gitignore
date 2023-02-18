@@ -1,1 +1,16 @@
+# Python
+*.pyc
+*.pyo
+
+# Django
+/staticfiles_collected/
+
+# Divio
+.divio
+
+# OS-specific patterns - add your own here
+.idea
+.vscode
+env
 venv
+__pycache__
