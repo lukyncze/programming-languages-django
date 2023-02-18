@@ -33,7 +33,7 @@ class Jazyk(models.Model):
     typ = models.ForeignKey(Typ, on_delete=models.RESTRICT)
 
     class Meta:
-        ordering = ["-oblibenost", "nazev"]
+        ordering = ["nazev"]
         verbose_name = 'Jazyk'
         verbose_name_plural = 'Jazyky'
 
