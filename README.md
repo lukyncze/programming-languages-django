@@ -1,6 +1,6 @@
-# Django - programming languages project
+# Programming languages - Django project
 
-You can visit site [here](https://lukyncze-programming-languages-django.netlify.app/).
+I created this project while training for my high school graduation.
 
 ## Project installation:
 
