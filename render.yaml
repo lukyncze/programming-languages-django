@@ -1,0 +1,21 @@
+databases:
+  - name: languages
+    databaseName: languages
+    user: postgres
+
+services:
+  - type: web
+    name: programming_languages
+    env: python
+    buildCommand: './build.sh'
+    startCommand: 'gunicorn programming_languages.wsgi:application'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: languages
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+
